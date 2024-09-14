@@ -26,14 +26,7 @@ export const searchTracks = async(query, token) => {
         }
     });
     const data = await response.json()
-    console.log(data)
     //console.log(data.tracks.items[2])
-    const musicData=({
-        song: data.tracks.items[7].preview_url,
-        nameSong: data.tracks.items[2].name,
-        backgroundImage: data.tracks.items[2].album.images[0].url,
-        image: data.tracks.items[2].album.images[2].url
-    })
     //console.log(musicData)
-    return musicData
+    return data.tracks.items
 }
